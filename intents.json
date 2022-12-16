@@ -1,0 +1,276 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "Hi",
+      "patterns": [
+        "Is any body here"
+      ],
+      "responses": [
+        "I'm here. What help do you need?"
+      ]
+    },
+    {
+      "tag": "Name",
+      "patterns": [
+        "What is your name",
+        "What's your name"
+      ],
+      "responses": [
+        "My name is ShoppeBotChat. What do you need"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "Which items do you have?",
+        "What kinds of items are there?",
+        "What do you sell?"
+      ],
+      "responses": [
+        "We sell it all",
+        "We have it all"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "delivery",
+      "patterns": [
+        "How long does delivery take?",
+        "How long does shipping take?",
+        "When do I get my delivery?"
+      ],
+      "responses": [
+        "Delivery takes 2-4 days",
+        "Shipping takes 2-4 days"
+      ]
+    },
+    {
+      "tag": "buy",
+      "patterns": [
+        "do you have",
+        "what do you sell"
+      ],
+      "responses": [
+        "We have clothes, shoes, technological and book"
+      ]
+    },
+    {
+      "tag": "clothes",
+      "patterns": [
+        "clothes", "shirt", "jeans", "T-shirt", "dress", "suit", "coat", "jacket", "hats", "pants", "shorts"
+      ],
+      "responses": [
+        "How do you want to find samples?",
+        "What price range are you looking for?",
+        "There are many different types, what kind do you want to find?"
+      ]
+    },
+    {
+      "tag": "shoes",
+      "patterns": [
+        "shoe","shoes"
+      ],
+      "responses": [
+        "What kind of shoes are you looking for?",
+        "Are you looking for sports shoes, soccer shoes, western shoes or something?"
+      ]
+    },
+    {
+      "tag": "shoes type",
+      "patterns": [
+        "sports shoes","soccer shoes","running shoes","western shoes","boots","leather shoes","high heels","platform shoes",
+        "sandals","flat shoes"
+      ],
+      "responses": [
+        "What brand of shoes are you looking for?",
+        "Do you want to find Adidas, Nike, Converse, Bitis, Puma?"
+      ]
+    },
+    {
+      "tag": "brand shoes",
+      "patterns": [
+        "Adidas", "Nike","Converse", "Bitis","Puma","Vans"
+      ],
+      "responses": [
+        "What shoe size do you wear?",
+        "What size does your foot fit?"
+      ]
+    },
+    {
+      "tag": "size shoes",
+      "patterns": [
+        "35", "36","37", "38","39","40","41","42","43","44","45"
+      ],
+      "responses": [
+        "We send you some of the following shoe models",
+        "we have. Please search in the search box and add to cart now"
+      ]
+    },
+     {
+      "tag": "no have shoes",
+      "patterns": [
+        "Balenciaga","Ananas","Fila","Rebook","Supreme","Valentino"
+      ],
+      "responses": [
+        "Sorry. We don't have this shoe brand",
+        "Sorry. We don't have these shoes",
+        "Sorry. we do not have. You can refer to brands like Adidas, Nike, Converse","Bitis","Puma","Vans"
+      ]
+    },
+    {
+      "tag": "Technological",
+      "patterns": [
+        "Computer", "Cell Phone", "Phone", "key board", "mouse", "charging", "headphone","computer screen","backup charger",
+        "samsung", "Vivo", "Oppo", "Asus", "dell", "MSI", "USB", "Memory", "disk"
+      ],
+      "responses": [
+        "How do you want to find samples?", "What price range are you looking for?",
+        "There are many different types, what kind do you want to find?", "We have"
+      ]
+    },
+    {
+      "tag": "Book",
+      "patterns": [
+        "Books","Textbook","Novel" , "Picture book", "Reference book", "Comic", "Poem", "Hardcover", "Paperback",
+        "Exercise book", "Magazine", "Autobiography", "Encyclopedia", "Thriller book", "Dictionary", "Short story",
+        "Cookery book", "Nonfiction", "Science fiction book"
+      ],
+      "responses": [
+        "We have all books. You can find it in the search box"
+      ]
+    },
+    {
+      "tag": "size",
+      "patterns": [
+        "What size should I wear"
+      ],
+      "responses": [
+        "size S : 1m40-1m55 and 40kg-49kg. size M : 1m56-1m69 and 50kg-59kg.size L : 1m70-1m80 and 60kg-69kg.size XL : 1m81-1m90 and 70kg-85kg"
+      ]
+    },
+     {
+      "tag": "no have size",
+      "patterns": [
+        "No size fit me"
+      ],
+      "responses": [
+        "Sorry. We don't have any other size"
+      ]
+    },
+    {
+      "tag": "size S",
+      "patterns": [
+        "1m40","1m41","1m42","1m43","1m44","1m45","1m46","1m47","1m48","1m49","1m50","1m51","1m52","1m53","1m54","1m55",
+        "40kg","41kg","42kg","43kg","44kg","45kg","46kg","47kg","48kg","49kg"
+      ],
+      "responses": [
+        "you should wear size S"
+      ]
+    },
+    {
+      "tag": "size M",
+      "patterns": [
+        "1m56","1m57","1m58","1m59","1m60","1m61","1m62","1m63","1m64","1m65","1m66","1m67","1m68","1m69",
+        "50kg","51kg","52kg","53kg","54kg","55kg","56kg","57kg","58kg","59kg"
+      ],
+      "responses": [
+        "you should wear size M"
+      ]
+    },
+    {
+      "tag": "size L",
+      "patterns": [
+        "1m70","1m71","1m72","1m73","1m74","1m75","1m76","1m77","1m78","1m79","1m80",
+        "60kg","61kg","62kg","63kg","64kg","65kg","66kg","67kg","68kg","69kg"
+      ],
+      "responses": [
+        "you should wear size L"
+      ]
+    },
+    {
+      "tag": "size XL",
+      "patterns": [
+        "1m81","1m82","1m83","1m84","1m85","1m86","1m87","1m88","1m89","1m90",
+        "70kg","71kg","72kg","73kg","74kg","75kg","76kg","77kg","78kg","79kg","80kg","81kg","82kg","83kg","84kg","85kg"
+      ],
+      "responses": [
+        "you should wear size XL"
+      ]
+    },
+    {
+      "tag": "eat",
+      "patterns": [
+        "did you eat breakfast",
+        "did you eat lunch",
+        "did you eat dinner"
+      ],
+      "responses": [
+        "I eat every time",
+        "I'm hungry. give me something to eat",
+        "I'm AI. I do not eat"
+      ]
+    },
+    {
+      "tag": "a",
+      "patterns": [
+        "a"
+      ],
+      "responses": [
+       "một hai ba bốn năm sáu"
+      ]
+    },
+    {
+      "tag": "b",
+      "patterns": [
+        "b"
+      ],
+      "responses": [
+        "bạn đã ăn cơm chưa"
+      ]
+    }
+  ]
+}
+
