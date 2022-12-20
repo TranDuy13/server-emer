@@ -50,19 +50,20 @@ Content-Type: application/json
 {
     "username": "useroanh",
     "password": "admin12345",
-    "fullname": " Tran Thi Kim Oanh",
-    "role":"part time",
-    "address":" a6/60 man thiện"
+
 }
 ###
 POST http://localhost:4000/auth/register
 Content-Type: application/json 
 
 {
-     "username": "adminkhanh",
-    "password": "adminkhanh",
-    "name":"Pham Van khanh",
-    "email":"khanhpham@gmail.com",
-    "address":"Ho Chi Minh city, Viet Nam",
-    "phone":"0357835645"
+     "username": "adminchiba",
+    "password": "1234567"
+}
+### 
+POST  http://localhost:4000/ai/question
+Content-Type: application/json 
+
+{
+   "text":"Hi"
 }

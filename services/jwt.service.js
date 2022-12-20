@@ -3,7 +3,6 @@ const { ACCESS_TOKEN_SECRET, EMAIL, PASSWORD } = require("../models/index");
 
 const verify = (req, res, next) => {
   const header = req.headers.authorization;
-
   if (!header) {
     res.status(403).json({
       data: {

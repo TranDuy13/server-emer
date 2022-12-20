@@ -4,6 +4,8 @@ const { ACCESS_TOKEN_SECRET } = require("../models/index");
 const jwtService = require("./jwt.service");
 const Speakeasy = require("speakeasy");
 const nodemailer = require("nodemailer");
+const { use } = require("../routes/aiRoute");
+const cloudinary = require("cloudinary");
 const register = async (body) => {
   try {
     const existUser = await ADMIN.findOne({
@@ -15,25 +17,11 @@ const register = async (body) => {
         success: false,
       };
     }
-    const existEmail = await ADMIN.findOne({
-      email: body.email,
-    });
-    if (existEmail) {
-      return {
-        message: "Email has been used!",
-        success: false,
-      };
-    }
     const hashedPassword = await argon2.hash(body.password);
-    const { username, password, name, email, address, phone, role } = body;
+    const { username, password } = body;
     const newUser = new ADMIN({
       username,
       password: hashedPassword,
-      name,
-      email,
-      address,
-      phone,
-      role,
     });
     await newUser.save();
     return {
@@ -53,18 +41,11 @@ const login = async (body) => {
     const admin = await ADMIN.findOne({
       username: username,
     });
-    console.log(body);
     if (!admin)
       return {
         message: "Invalid account!",
         success: false,
       };
-    if (!admin.isActive) {
-      return {
-        message: "Please verify the account!",
-        success: false,
-      };
-    }
     const PasswordValid = await argon2.verify(admin.password, password);
     if (!PasswordValid) {
       return {
@@ -87,7 +68,7 @@ const login = async (body) => {
 };
 const getAuth = async (body) => {
   try {
-    const user = await USER.findById(body);
+    const user = await ADMIN.findById(body);
     if (!user) {
       return {
         message: "Login Fail!",
@@ -97,7 +78,7 @@ const getAuth = async (body) => {
     return {
       message: "Login Successfully!",
       success: true,
-      data: user,
+      data: { admin: user },
     };
   } catch (error) {
     return {
@@ -107,10 +88,8 @@ const getAuth = async (body) => {
   }
 };
 const sendOTP = (email) => {
+  var secret = Speakeasy.generateSecret({ length: 20 }).base32;
 
-  var secret = Speakeasy.generateSecret({ length: 20 });
-     
-   
   let transport = nodemailer.createTransport({
     service: "Gmail",
     auth: {
@@ -118,15 +97,17 @@ const sendOTP = (email) => {
       pass: "humtghokhhanbqjn",
     },
   });
-  console.log(secret.base32);
+  console.log(secret);
   var mailOptions = {
     from: "duygtran1706@gmail.com",
     to: email,
     subject: "Email confirmation",
-    html: ` Click <a href=http://localhost:4000/auth/verify/seller/${secret.base32}>here</a> to verify account 
+    html: ` Click <a href=http://localhost:3000/registerSeller/${secret}>here</a> to verify account 
     Your token: ${Speakeasy.totp({
-      secret: secret.base32,
-      encoding: "base32"
+      secret: secret,
+      encoding: "base32",
+      step: 100,
+      window: 3,
     })}`,
   };
   transport.sendMail(mailOptions, function (err, res) {
@@ -139,14 +120,6 @@ const sendOTP = (email) => {
 };
 const sendMail = async (body) => {
   try {
-    const User = await ADMIN.findOne({ email: body.email });
-
-    if (!User)
-      return {
-        message: "Invalid email!",
-        success: false,
-      };
-  
     sendOTP(body.email);
     return {
       message: "Send Email successfully!",
@@ -159,23 +132,33 @@ const sendMail = async (body) => {
     };
   }
 };
-const verifyUser = async (id, token) => {
+const verifyUser = async (id, token, _id) => {
   try {
     const isValid = Speakeasy.totp.verify({
       secret: id,
       encoding: "base32",
       token: token,
-      window: 0,
+      window: 3,
+      step: 100,
     });
     if (!isValid)
       return {
         message: "The token is not valid!",
         success: false,
       };
-    return {
-      message: "Verify user successfullyy",
-      success: true,
-    };
+    const updateUser = await ADMIN.findByIdAndUpdate(
+      { _id: _id },
+      { isActive: true }
+    );
+
+    if (updateUser) {
+      const data = await ADMIN.findById({_id:_id})
+      return {
+        message: "Verify user successfullyy",
+        success: true,
+        data: { admin: data },
+      };
+    }
   } catch (error) {
     return {
       message: "An occured error!",
@@ -183,8 +166,44 @@ const verifyUser = async (id, token) => {
     };
   }
 };
+const updateProfile = async (id, body) => {
+  try {
+    const myCloud = await cloudinary.v2.uploader.upload(body.avatar, {
+      folder: "avatars",
+      width: 320,
+      height: 320,
+      crop: "scale",
+    });
+
+    body.avt = {
+      url: myCloud.secure_url,
+      public_id: myCloud.public_id,
+    };
+    console.log(body, "body");
+    const existUser = await ADMIN.findById({ _id: id });
+    if (!existUser)
+      return {
+        message: "User không tồn tại!",
+        success: false,
+      };
+
+    const update = await ADMIN.findByIdAndUpdate({ _id: id }, body);
+    if (update)
+    return {
+      data: { admin: update },
+      message: "Cập nhật thông tin thành công",
+      success: true,
+    };
+  } catch (error) {
+    return {
+      message: "Có lỗi xảy ra",
+      success: false,
+    };
+  }
+};
 module.exports = {
   register,
+  updateProfile,
   login,
   getAuth,
   sendMail,

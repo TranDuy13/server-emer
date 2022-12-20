@@ -4,11 +4,6 @@ const checker ={
     register: joi.object().keys({
         username: joi.string().min(6).required(),
         password: joi.string().min(8).required(),       
-        name: joi.string().min(6).required(),
-        email: joi.string().email().required(),
-        role: joi.string().min(3),
-        address: joi.string().min(6).required(),
-        phone: joi.number().integer().min(10).required(),
       
     }),
     login: joi.object().keys({

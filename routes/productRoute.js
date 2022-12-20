@@ -7,7 +7,10 @@ const jwtService = require("../services/jwt.service");
 
 
 router.post("/create", Controller.createProduct);
+router.get("/getbyseller", Controller.getProductBySeller);
+router.post("/update/:id", Controller.updateProduct)
 router.get("/:id", Controller.getProduct)
+router.delete('/delete/:id', Controller.deleteProduct)
 
 
 

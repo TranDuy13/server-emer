@@ -1,5 +1,6 @@
 const Product = require("../models/Product");
-
+const ADMIN = require("../models/Admin");
+const cloudinary = require("cloudinary");
 const getAllProduct = async () => {
   try {
     const product = await Product.find({});
@@ -61,6 +62,23 @@ const getProductBySeller = async (id) => {
 
 const createProduct = async (body) => {
   try {
+    const existUser = await ADMIN.findById({ _id: body.seller });
+    const myCloud = await cloudinary.v2.uploader.upload(body.image, {
+      folder: "avatars",
+      width: 320,
+      height: 320,
+      crop: "scale",
+    });
+
+    body.img = {
+      url: myCloud.secure_url,
+      public_id: myCloud.public_id,
+    };
+    if (!existUser)
+      return {
+        message: "Người bán không tồn tại",
+        success: false,
+      };
     const newProduct = new Product(body);
     await newProduct.save();
     return {
@@ -130,5 +148,5 @@ module.exports = {
   getAllProduct,
   updateProduct,
   deleteProduct,
-  getProductBySeller
+  getProductBySeller,
 };

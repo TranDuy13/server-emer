@@ -6,7 +6,6 @@ const Admin = new Schema(
     username: {
       type: String,
       required: true,
-      unique: true,
       lowercase: true,
     },
     password: {
@@ -15,35 +14,44 @@ const Admin = new Schema(
     },
     name: {
       type: String,
-      required: true,
+      default: ' ',
     },
     email: {
       type: String,
-      required: true,
-      unique: true,
       lowercase: true,
+      default:  ' ',
     },
     address: {
       type: String,
-      required: true,
+      default: ' ',
+    },
+    birthday:{
+      default: new Date(),
+      type: Date
+    },
+    avt:{
+        url:{
+          type: String,
+        },
+        public_id: {
+          type: String,
+        },
     },
     phone: {
       type: Number,
-      required: true,
+      default: ' ',
     },
     identity_card:{
       type: Number,
-      required: true,
+      default: ' ',
       unique: true
     },
     isActive: {
       type: Boolean,
-      required: true,
       default: false,
     },
     isAdmin: {
       type: Boolean,
-      required: true,
       default: false,
     },
   },

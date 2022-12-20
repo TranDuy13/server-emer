@@ -32,6 +32,8 @@ const getProduct = async (req, res) => {
     return controller.sendError(res);
   }
 };
+
+
 const getAllProduct = async (req, res) => {
   try {
     const productSer = await productService.getAllProduct();

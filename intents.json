@@ -4,200 +4,776 @@
       "tag": "greeting",
       "patterns": [
         "Hi",
-        "Hey",
-        "How are you",
-        "Is anyone there?",
         "Hello",
-        "Good day"
+        "Xin chào",
+        "Chào",
+        "Chào buổi sáng",
+        "alo"
       ],
       "responses": [
-        "Hey",
-        "Hello, thanks for visiting",
-        "Hi there, what can I do for you?",
-        "Hi there, how can I help?"
+        "Chào bạn. Bạn cần gì",
+        "Chào bạn. Tôi có thể giúp gì cho bạn đây",
+        "Chào bạn. Rất vui khi có thể giúp gì đó cho bạn",
+        "Chào bạn. Chúc bạn 1 ngày tốt lành"
       ]
     },
     {
-      "tag": "Hi",
+      "tag": "need help",
       "patterns": [
-        "Is any body here"
+        "Tôi đang gặp khó khăn",
+        "Tôi đang thắc mắc vài thứ",
+        "Bạn có thể giúp tôi không"
       ],
       "responses": [
-        "I'm here. What help do you need?"
+        "Bạn cần tôi giúp gì?",
+        "Tôi sẽ giúp bạn hiểu mọi thứ về trang web này?"
       ]
     },
     {
       "tag": "Name",
       "patterns": [
-        "What is your name",
-        "What's your name"
+        "Tên của bạn là gì",
+        "Bạn tên gì"
       ],
       "responses": [
-        "My name is ShoppeBotChat. What do you need"
+        "Tên tôi là Chatbot"
       ]
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you later", "Goodbye"],
+      "patterns": ["Tạm biệt", "Chào tạm biệt", "Goodbye"],
       "responses": [
-        "See you later, thanks for visiting",
-        "Have a nice day",
-        "Bye! Come back again soon."
+        "Cảm ơn bạn đã vào trang web",
+        "Tạm biệt. Hẹn gặp lại"
       ]
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!"],
-      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      "patterns": ["cảm ơn", "mình cảm ơn", "may mà có bạn giúp", "cảm ơn nha"],
+      "responses": ["Không có gì", "Nếu bạn cần giúp đỡ hãy tìm tôi", "Bạn cần gì nữa không"]
     },
     {
       "tag": "items",
       "patterns": [
-        "Which items do you have?",
-        "What kinds of items are there?",
-        "What do you sell?"
+        "Trang web này bán những gì",
+        "ở đây bán những cái gì"
       ],
       "responses": [
-        "We sell it all",
-        "We have it all"
+        "Chúng tôi bán sách, quần áo, đồ công nghệ và giày?",
+        "Bạn muốn mua gì?"
+      ]
+    },
+    {
+      "tag": "no-items",
+      "patterns": [
+        "đồ điện","bóng đèn","quạt","máy bơm","bếp điện","Bếp từ","Đồ ăn","Nước ngọt","bia","nước khoáng","rượu"
+      ],
+      "responses": [
+        "Chúng tôi không bán. Chúng tôi chỉ bán sách, quần áo, máy tính, đồ công nghệ và giày"
       ]
     },
     {
       "tag": "payments",
       "patterns": [
-        "Do you take credit cards?",
-        "Do you accept Mastercard?",
-        "Can I pay with Paypal?",
-        "Are you cash only?"
+        "thanh toán",
+        "momo",
+        "quẹt thẻ",
+        "chuyển khoản"
       ],
       "responses": [
-        "We accept VISA, Mastercard and Paypal",
-        "We accept most major credit cards, and Paypal"
+        "Được bạn. Chúng tôi hỗ trợ thanh toán bằng thẻ, chuyển khoản, momo và tiền mặt"
+      ]
+    },
+    {
+      "tag": "Cast",
+      "patterns": [
+        "tiền mặt"
+      ],
+      "responses": [
+        "Bạn có thể thanh toán tiền mặt khi nhận hàng"
       ]
     },
     {
       "tag": "delivery",
       "patterns": [
-        "How long does delivery take?",
-        "How long does shipping take?",
-        "When do I get my delivery?"
+        "Thời gian vận chuyển hàng khoảng bao lâu",
+        "Thời gian ship hàng khoảng bao lâu",
+        "Bao lâu thì tôi nhận được hàng"
       ],
       "responses": [
-        "Delivery takes 2-4 days",
-        "Shipping takes 2-4 days"
+        "khoảng từ 2-3 ngày khu vực cùng tỉnh và 4-5 ngày đến các tỉnh khác"
       ]
     },
     {
-      "tag": "buy",
+      "tag": "shiper",
       "patterns": [
-        "do you have",
-        "what do you sell"
+        "Khi nào thì hàng của tôi được chuyển đi",
+        "Khi nào thì đồ của tôi được chuyển đi",
+        "Khi nào thì bắt đầu chuyển hàng đi"
       ],
       "responses": [
-        "We have clothes, shoes, technological and book"
-      ]
-    },
-    {
-      "tag": "clothes",
-      "patterns": [
-        "clothes", "shirt", "jeans", "T-shirt", "dress", "suit", "coat", "jacket", "hats", "pants", "shorts"
-      ],
-      "responses": [
-        "How do you want to find samples?",
-        "What price range are you looking for?",
-        "There are many different types, what kind do you want to find?"
+        "Thường thì sau 2-3 tiếng là hàng được chuyển đi ạ. Chậm nhất là ngày hôm sau"
       ]
     },
     {
       "tag": "shoes",
       "patterns": [
-        "shoe","shoes"
+        "giày"
       ],
       "responses": [
-        "What kind of shoes are you looking for?",
-        "Are you looking for sports shoes, soccer shoes, western shoes or something?"
+        "Bạn muốn tìm loại giày nào",
+        "Ở đây chúng tôi có giày thể thao, giày chạy bộ và giày đá bóng"
       ]
     },
     {
-      "tag": "shoes type",
+      "tag": "real-shoes",
       "patterns": [
-        "sports shoes","soccer shoes","running shoes","western shoes","boots","leather shoes","high heels","platform shoes",
-        "sandals","flat shoes"
+        "giày chính hãng",
+        "giày real",
+        "có phải giày fake không",
+        "giày có mới không",
+        "giày có cũ không",
+        "giày đã qua sử dụng chưa"
       ],
       "responses": [
-        "What brand of shoes are you looking for?",
-        "Do you want to find Adidas, Nike, Converse, Bitis, Puma?"
+        "Giày của chúng tôi toàn bộ đều là hàng chính hãng, nguyên hộp nguyên tem. Nếu bạn phát hiện không phải hãy báo cáo và chúng tôi sẽ đền bù cho bạn"
       ]
     },
     {
-      "tag": "brand shoes",
+      "tag": "shoe type",
       "patterns": [
-        "Adidas", "Nike","Converse", "Bitis","Puma","Vans"
+        "giày thể thao","giày chạy bộ","giày đá banh","giày đá bóng"
       ],
       "responses": [
-        "What shoe size do you wear?",
-        "What size does your foot fit?"
+        "Bạn muốn mua giày của hãng nào?",
+        "Chúng tôi có các hãng giày thể thao và giày chạy bộ như Adidas, Nike, Puma, Bitis và Converse"
       ]
     },
     {
-      "tag": "size shoes",
-      "patterns": [
-        "35", "36","37", "38","39","40","41","42","43","44","45"
-      ],
-      "responses": [
-        "We send you some of the following shoe models",
-        "we have. Please search in the search box and add to cart now"
-      ]
-    },
-     {
       "tag": "no have shoes",
       "patterns": [
         "Balenciaga","Ananas","Fila","Rebook","Supreme","Valentino"
       ],
       "responses": [
-        "Sorry. We don't have this shoe brand",
-        "Sorry. We don't have these shoes",
-        "Sorry. we do not have. You can refer to brands like Adidas, Nike, Converse","Bitis","Puma","Vans"
+        "Chúng tôi không có hãng này. Chúng tôi chỉ có giày của các hãng Adidas, Nike, Converse","Bitis","Puma","Vans"
       ]
     },
     {
-      "tag": "Technological",
+      "tag": "brand-shoes",
       "patterns": [
-        "Computer", "Cell Phone", "Phone", "key board", "mouse", "charging", "headphone","computer screen","backup charger",
-        "samsung", "Vivo", "Oppo", "Asus", "dell", "MSI", "USB", "Memory", "disk"
+        "Adidas", "Nike","Converse", "Bitis","Puma","Vans"
       ],
       "responses": [
-        "How do you want to find samples?", "What price range are you looking for?",
-        "There are many different types, what kind do you want to find?", "We have"
+        "Bạn đi giày size gì. Nếu chưa chọn được size thì bạn gửi giới tính và chiều dài chân chúng tôi sẽ chọn size giúp bạn. Ví dụ: Nam-23cm"
+      ]
+    },
+    {
+      "tag": "man-size36",
+      "patterns": [
+        "Nam 22cm","Nam 22.1cm","Nam 22.2cm","Nam 22.3cm","Nam 22.4cm",
+        "Nam 22 cm","Nam 22.1 cm","Nam 22.2 cm","Nam 22.3 cm","Nam 22.4 cm",
+        "Nam 22","Nam 22.1","Nam 22.2","Nam 22.3","Nam 22.4"
+      ],
+      "responses": [
+        "Bạn đi giày size 36 nhé "
+      ]
+    },
+    {
+      "tag": "man-size37",
+      "patterns": [
+        "Nam 22cm","Nam 22.1cm","Nam 22.2cm","Nam 22.3cm","Nam 22.4cm",
+        "Nam 22 cm","Nam 22.1 cm","Nam 22.2 cm","Nam 22.3 cm","Nam 22.4 cm",
+        "Nam 22","Nam 22.1","Nam 22.2","Nam 22.3","Nam 22.4"
+      ],
+      "responses": [
+        "Bạn đi giày size 37 nhé "
+      ]
+    },
+    {
+      "tag": "man-size38",
+      "patterns": [
+        "Nam 22.5cm","Nam 22.6cm","Nam 22.7cm","Nam 22.8cm","Nam 22.9cm",
+        "Nam 22.5 cm","Nam 22.6 cm","Nam 22.7 cm","Nam 22.8 cm","Nam 22.9 cm",
+        "Nam 22.5","Nam 22.6","Nam 22.7","Nam 22.8","Nam 22.9"
+      ],
+      "responses": [
+        "Bạn đi giày size 38 nhé "
+      ]
+    },
+    {
+      "tag": "man-size39",
+      "patterns": [
+        "Nam 23cm","Nam 23.1cm","Nam 23.2cm","Nam 23.3cm","Nam 23.4cm","Nam 23.5cm",
+        "Nam 23 cm","Nam 23.1 cm","Nam 23.2 cm","Nam 23.3 cm","Nam 23.4 cm","Nam 23.5 cm",
+        "Nam 23","Nam 23.1","Nam 23.2","Nam 23.3","Nam 23.4","Nam 23.5"
+      ],
+      "responses": [
+        "Bạn đi giày size 39 nhé "
+      ]
+    },
+    {
+      "tag": "man-size39.5",
+      "patterns": [
+        "Nam 23.6cm","Nam 23.6cm","Nam 23.7cm","Nam 23.8cm","Nam 23.9cm","Nam 24cm",
+        "Nam 23.6 cm","Nam 23.6 cm","Nam 23.7 cm","Nam 23.8 cm","Nam 23.9 cm","Nam 24 cm",
+        "Nam 23.6","Nam 23.6","Nam 23.7","Nam 23.8","Nam 23.9","Nam 24"
+      ],
+      "responses": [
+        "Bạn đi giày size 39.5 nhé "
+      ]
+    },
+    {
+      "tag": "man-size40",
+      "patterns": [
+        "Nam 24.1cm","Nam 24.2cm","Nam 24.3cm","Nam 24.4cm",
+        "Nam 24.1 cm","Nam 24.2 cm","Nam 24.3 cm","Nam 24.4 cm",
+        "Nam 24.1","Nam 24.2","Nam 24.3","Nam 24.4"
+      ],
+      "responses": [
+        "Bạn đi giày size 40 nhé "
+      ]
+    },
+    {
+      "tag": "man-size40.5",
+      "patterns": [
+        "Nam 24.4cm","Nam 24.5cm","Nam 24.6cm","Nam 24.7cm","Nam 24.8cm",
+        "Nam 24.4 cm","Nam 24.5 cm","Nam 24.6 cm","Nam 24.7 cm","Nam 24.8 cm",
+        "Nam 24.4","Nam 24.5","Nam 24.6","Nam 24.7","Nam 24.8"
+      ],
+      "responses": [
+        "Bạn đi giày size 40.5 nhé "
+      ]
+    },
+    {
+      "tag": "man-size41",
+      "patterns": [
+        "Nam 24.9cm","Nam 25cm","Nam 25.1cm","Nam 25.2cm","Nam 25.3cm","Nam 25.5cm",
+        "Nam 24.9 cm","Nam 25 cm","Nam 25.1 cm","Nam 25.2 cm","Nam 25.3 cm","Nam 25.4 cm",
+        "Nam 24.9","Nam 25","Nam 25.1","Nam 25.2","Nam 25.3","Nam 25.4"
+      ],
+      "responses": [
+        "Bạn đi giày size 41 nhé "
+      ]
+    },
+    {
+      "tag": "man-size41.5",
+      "patterns": [
+        "Nam 25.5cm","Nam 25.6cm","Nam 25.7cm",
+        "Nam 25.5 cm","Nam 25.6 cm","Nam 25.7 cm",
+        "Nam 25.5","Nam 25.6","Nam 25.7"
+      ],
+      "responses": [
+        "Bạn đi giày size 41.5 nhé "
+      ]
+    },
+    {
+      "tag": "man-size42",
+      "patterns": [
+        "Nam 25.8cm","Nam 25.9cm","Nam 26cm",
+        "Nam 25.8 cm","Nam 25.9 cm","Nam 26 cm",
+        "Nam 25.8","Nam 25.9","Nam 26"
+      ],
+      "responses": [
+        "Bạn đi giày size 42 nhé "
+      ]
+    },
+    {
+      "tag": "man-size42.5",
+      "patterns": [
+        "Nam 26.1cm","Nam 26.2cm","Nam 26.3cm","Nam 26.4cm","Nam 26.5cm","Nam 26.6cm","Nam 26.7cm",
+        "Nam 26.1 cm","Nam 26.2 cm","Nam 26.3 cm","Nam 26.4 cm","Nam 26.5 cm","Nam 26.6 cm","Nam 26.7 cm",
+        "Nam 26.1","Nam 26.2","Nam 26.3","Nam 26.4","Nam 26.5","Nam 26.6","Nam 26.7"
+      ],
+      "responses": [
+        "Bạn đi giày size 42.5 nhé "
+      ]
+    },
+    {
+      "tag": "man-size43",
+      "patterns": [
+        "Nam 26.8cm","Nam 26.9cm","Nam 27cm",
+        "Nam 26.8 cm","Nam 26.9 cm","Nam 27 cm",
+        "Nam 26.8","Nam 26.9","Nam 27"
+      ],
+      "responses": [
+        "Bạn đi giày size 43 nhé "
+      ]
+    },
+    {
+      "tag": "man-size43.5",
+      "patterns": [
+        "Nam 27.1cm","Nam 27.2cm","Nam 27.3cm",
+        "Nam 27.1 cm","Nam 27.2 cm","Nam 27.3 cm",
+        "Nam 27.1","Nam 27.2","Nam 27.3"
+      ],
+      "responses": [
+        "Bạn đi giày size 43.5 nhé"
+      ]
+    },
+    {
+      "tag": "man-size44",
+      "patterns": [
+        "Nam 27.4cm","Nam 27.5cm","Nam 27.6cm","Nam 27.7cm","Nam 27.8cm","Nam 27.9cm",
+        "Nam 27.4 cm","Nam 27.5 cm","Nam 27.6 cm","Nam 27.7 cm","Nam 27.8 cm","Nam 27.9 cm",
+        "Nam 27.4","Nam 27.5","Nam 27.6","Nam 27.7","Nam 27.8","Nam 27.9"
+      ],
+      "responses": [
+        "Bạn đi giày size 44 nhé"
+      ]
+    },
+    {
+      "tag": "man-size45",
+      "patterns": [
+        "Nam 28cm","Nam 28.1cm","Nam 28.2cm","Nam 28.3cm","Nam 28.4cm","Nam 28.5cm","Nam 28.6cm",
+        "Nam 28 cm","Nam 28.1 cm","Nam 28.2 cm","Nam 28.3 cm","Nam 28.4 cm","Nam 28.5 cm","Nam 28.6 cm",
+        "Nam 28","Nam 28.1","Nam 28.2","Nam 28.3","Nam 28.4","Nam 28.5","Nam 28.6"
+      ],
+      "responses": [
+        "Bạn đi giày size 45 nhé"
+      ]
+    },
+    {
+      "tag": "man-size46",
+      "patterns": [
+        "Nam 28.7cm","Nam 28.8cm","Nam 28.9cm","Nam 29cm","Nam 29.1cm","Nam 29.2cm","Nam 29.3cm",
+        "Nam 28.7 cm","Nam 28.8 cm","Nam 28.9 cm","Nam 29 cm","Nam 29.1 cm","Nam 29.2 cm","Nam 29.3 cm",
+        "Nam 28.7","Nam 28.8","Nam 28.9","Nam 29","Nam 29.1","Nam 29.2","Nam 29.3"
+      ],
+      "responses": [
+        "Bạn đi giày size 46 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 34.5",
+      "patterns": [
+        "Nữ 20.7cm","Nữ 20.1cm","Nữ 20.2cm","Nữ 20.3cm","Nữ 20.4cm","Nữ 20.5cm","Nữ 20.6cm",
+        "Nữ 20.7 cm","Nữ 20.1 cm","Nữ 20.2 cm","Nữ 20.3 cm","Nữ 20.4 cm","Nữ 20.5 cm","Nữ 20.6 cm",
+        "Nữ 20.7","Nữ 20.1","Nữ 20.2","Nữ 20.3","Nữ 20.4","Nữ 20.5","Nữ 20.6"
+      ],
+      "responses": [
+        "Bạn đi giày size 34.5 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 35",
+      "patterns": [
+        "Nữ 20.8cm","Nữ 20.9cm","Nữ 21cm","Nữ 21.2cm","Nữ 21.2cm","Nữ 21.3cm",
+        "Nữ 20.8 cm","Nữ 20.9 cm","Nữ 21 cm","Nữ 21.1 cm","Nữ 21.2 cm","Nữ 21.3 cm",
+        "Nữ 20.8","Nữ 20.9","Nữ 21","Nữ 21.1","Nữ 21.2","Nữ 21.3"
+      ],
+      "responses": [
+        "Bạn đi giày size 35 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 35.5",
+      "patterns": [
+        "Nữ 21.4cm","Nữ 21.5cm","Nữ 21.6cm",
+        "Nữ 21.4 cm","Nữ 21.5 cm","Nữ 21.6 cm",
+        "Nữ 21.4","Nữ 21.5","Nữ 21.6"
+      ],
+      "responses": [
+        "Bạn đi giày size 35.5 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 36",
+      "patterns": [
+        "Nữ 21.7cm","Nữ 21.8cm","Nữ 21.9cm","Nữ 22cm","Nữ 22.1cm","Nữ 22.2cm",
+        "Nữ 21.7 cm","Nữ 21.8 cm","Nữ 21.9 cm","Nữ 22 cm","Nữ 22.1 cm","Nữ 22.2 cm",
+        "Nữ 21.7","Nữ 21.8","Nữ 21.9","Nữ 22","Nữ 22.1","Nữ 22.2"
+      ],
+      "responses": [
+        "Bạn đi giày size 36 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 36.5",
+      "patterns": [
+        "Nữ 22.3cm","Nữ 22.4cm","Nữ 22.5cm",
+        "Nữ 22.3 cm","Nữ 22.4 cm","Nữ 22.5 cm",
+        "Nữ 22.3","Nữ 22.4","Nữ 22.5"
+      ],
+      "responses": [
+        "Bạn đi giày size 36.5 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 37",
+      "patterns": [
+        "Nữ 22.6cm","Nữ 22.7cm","Nữ 22.8cm","Nữ 22.9cm","Nữ 23cm",
+        "Nữ 22.6 cm","Nữ 22.7 cm","Nữ 22.8 cm","Nữ 22.9 cm","Nữ 23 cm",
+        "Nữ 22.6","Nữ 22.7","Nữ 22.8","Nữ 22.9","Nữ 23"
+      ],
+      "responses": [
+        "Bạn đi giày size 37 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 37.5",
+      "patterns": [
+        "Nữ 23cm","Nữ 23.1cm","Nữ 23.2cm","Nữ 23.3cm","Nữ 23.4cm","Nữ 23.5cm",
+        "Nữ 23 cm","Nữ 23.1 cm","Nữ 23.2 cm","Nữ 23.3 cm","Nữ 23.4 cm","Nữ 23.5 cm",
+        "Nữ 23","Nữ 23.1","Nữ 23.2","Nữ 23.3","Nữ 23.4","Nữ 23.5"
+      ],
+      "responses": [
+        "Bạn đi giày size 37.5 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 38",
+      "patterns": [
+        "Nữ 23.6cm","Nữ 23.7cm","Nữ 23.8cm",
+        "Nữ 23.6 cm","Nữ 23.7 cm","Nữ 23.8 cm",
+        "Nữ 23.6","Nữ 23.7","Nữ 23.8"
+      ],
+      "responses": [
+        "Bạn đi giày size 38 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 38.5",
+      "patterns": [
+        "Nữ 23.9cm","Nữ 24cm","Nữ 24.1cm",
+        "Nữ 23.9 cm","Nữ 24 cm","Nữ 24.1 cm",
+        "Nữ 23.9","Nữ 24","Nữ 24.1"
+      ],
+      "responses": [
+        "Bạn đi giày size 38.5 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 39",
+      "patterns": [
+        "Nữ 24.2cm","Nữ 24.3cm","Nữ 24.4cm","Nữ 24.5cm","Nữ 24.6cm",
+        "Nữ 24.2 cm","Nữ 24.3 cm","Nữ 24.4 cm","Nữ 24.5 cm","Nữ 24.6 cm",
+        "Nữ 24.2","Nữ 24.3","Nữ 24.4","Nữ 24.5","Nữ 24.6"
+      ],
+      "responses": [
+        "Bạn đi giày size 39 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 39.5",
+      "patterns": [
+        "Nữ 24.7cm","Nữ 24.8cm","Nữ 24.9cm","Nữ 25cm","Nữ 25.1cm",
+        "Nữ 24.7 cm","Nữ 24.8 cm","Nữ 24.9 cm","Nữ 25 cm","Nữ 25.1 cm",
+        "Nữ 24.7","Nữ 24.8","Nữ 24.9","Nữ 25","Nữ 25.1"
+      ],
+      "responses": [
+        "Bạn đi giày size 39.5 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 40",
+      "patterns": [
+        "Nữ 25.2cm","Nữ 25.3cm","Nữ 25.4cm",
+        "Nữ 25.2 cm","Nữ 25.3 cm","Nữ 25.4 cm",
+        "Nữ 25.2","Nữ 25.3","Nữ 25.4"
+      ],
+      "responses": [
+        "Bạn đi giày size 40 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 40",
+      "patterns": [
+        "Nữ 25.2cm","Nữ 25.3cm","Nữ 25.4cm",
+        "Nữ 25.2 cm","Nữ 25.3 cm","Nữ 25.4 cm",
+        "Nữ 25.2","Nữ 25.3","Nữ 25.4"
+      ],
+      "responses": [
+        "Bạn đi giày size 40 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 40.5",
+      "patterns": [
+        "Nữ 25.5cm","Nữ 25.6cm","Nữ 25.7cm","Nữ 25.8cm","Nữ 25.9cm",
+        "Nữ 25.5 cm","Nữ 25.6 cm","Nữ 25.7 cm","Nữ 25.8 cm","Nữ 25.9 cm",
+        "Nữ 25.5","Nữ 25.6","Nữ 25.7","Nữ 25.8","Nữ 25.9"
+      ],
+      "responses": [
+        "Bạn đi giày size 40.5 nhé"
+      ]
+    },
+     {
+      "tag": "girl-size 41",
+      "patterns": [
+        "Nữ 26cm","Nữ 26.1cm","Nữ 26.2cm",
+        "Nữ 26 cm","Nữ 26.1 cm","Nữ 26.2 cm",
+        "Nữ 26","Nữ 26.1","Nữ 26.2"
+      ],
+      "responses": [
+        "Bạn đi giày size 41 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 41.5",
+      "patterns": [
+        "Nữ 26.3cm","Nữ 26.4cm","Nữ 26.5cm","Nữ 26.6cm","Nữ 26.7cm",
+        "Nữ 26.3 cm","Nữ 26.4 cm","Nữ 26.5 cm","Nữ 26.6 cm","Nữ 26.7 cm",
+        "Nữ 26.3","Nữ 26.4","Nữ 26.5","Nữ 26.6","Nữ 26.7"
+      ],
+      "responses": [
+        "Bạn đi giày size 41.5 nhé"
+      ]
+    },
+    {
+      "tag": "girl-size 42",
+      "patterns": [
+        "Nữ 27.1cm","Nữ 27.2cm","Nữ 27.3cm","Nữ 27.4cm","Nữ 27.5cm","Nữ 27.6cm",
+        "Nữ 27.1 cm","Nữ 27.2 cm","Nữ 27.3 cm","Nữ 27.4 cm","Nữ 27.5 cm","Nữ 27.6 cm",
+        "Nữ 27.1","Nữ 27.2","Nữ 27.3","Nữ 27.4","Nữ 27.5","Nữ 27.6"
+      ],
+      "responses": [
+        "Bạn đi giày size 42 nhé"
+      ]
+    },
+    {
+      "tag": "size shoes",
+      "patterns": [
+        "34","35","36","37", "38","39","40","41","42","43","44","45","46",
+        "34.5","35.5","36.5","37.5", "38.5","39.5","40.5","41.5","42.5","43.5","44.5","45.5","46"
+      ],
+      "responses": [
+        "Chúng tôi gửi bạn một số mẫu giày này có thể phù hợp với bạn. Hoặc bạn có thể tìm mẫu giày mà bạn thích ở ô tìm kiếm và thêm chúng vào giỏ hàng của bạn"
+      ]
+    },
+    {
+      "tag": "Computer",
+      "patterns": [
+        "Máy tính"
+      ],
+      "responses": [
+        "Bạn muốn mua laptop, máy tính để bàn hay máy tính cầm tay"
+      ]
+    },
+    {
+      "tag": "PC",
+      "patterns": [
+        "Máy tính để bàn"
+      ],
+      "responses": [
+        "Chúng tôi gửi bạn một vài mẫu máy tính để bàn có trong trang web"
+      ]
+    },
+    {
+      "tag": "laptop",
+      "patterns": [
+        "Máy tính xách tay","laptop"
+      ],
+      "responses": [
+        "Bạn muốn mua laptop hãng gì. Chúng tôi có Msi,Dell,Asus,Acer và Macbook. Bạn muốn mua laptop trong tầm giá bao nhiêu? 10-18 triệu, 18-25 triệu và 25-40 triệu"
+      ]
+    },
+    {
+      "tag": "price1-laptop",
+      "patterns": [
+        "tôi muốn mua laptop trong tầm giá từ 10-18 triệu",
+        "10-18 triệu", "10 triệu","11 triệu","12 triệu","13 triệu","14 triệu","15 triệu","16 triệu","17 triệu"
+      ],
+      "responses": [
+        "Đây là những laptop trong tầm giá bạn cần"
+      ]
+    },
+    {
+      "tag": "price2-laptop",
+      "patterns": [
+        "tôi muốn mua laptop trong tầm giá từ 18-25 triệu",
+        "18-25 triệu", "18 triệu","19 triệu","20 triệu","21 triệu","22 triệu","23 triệu","24 triệu"
+      ],
+      "responses": [
+        "Đây là những laptop trong tầm giá bạn cần"
+      ]
+    },
+    {
+      "tag": "price3-laptop",
+      "patterns": [
+        "tôi muốn mua laptop trong tầm giá trên 25 triệu",
+        "trên 25 triệu","25 triệu","26 triệu","27 triệu","28 triệu","29 triệu","30 triệu","31 triệu","32 triệu","33 triệu","34 triệu","35 triệu","36 triệu","37 triệu","38 triệu","39 triệu","40 triệu"
+      ],
+      "responses": [
+        "Đây là những laptop trong tầm giá bạn cần"
+      ]
+    },
+    {
+      "tag": "price4-phone",
+      "patterns": [
+        "tôi muốn mua điện thoại trong tầm giá dưới 1 triệu",
+        "dưới 1 triệu"
+      ],
+      "responses": [
+        "Chúng tôi không có điện thoại giá dưới 1 triệu"
+      ]
+    },
+    {
+      "tag": "laptop1",
+      "patterns": [
+        "dell","laptop hãng dell","laptop dell",
+        "msi","laptop hãng msi","laptop msi",
+        "asus","laptop hãng asus","laptop asus",
+        "macbook","laptop hãng apple","laptop macbook",
+        "acer","laptop hãng acer","laptop acer"
+      ],
+      "responses": [
+        "Chúng tôi gửi bạn một vài mẫu laptop có trong trang web"
+      ]
+    },
+    {
+      "tag": "laptop2",
+      "patterns": [
+        "sony","laptop hãng sony","laptop sony",
+        "lenovo","laptop hãng lenovo","laptop lenovo",
+        "razer","laptop hãng razer","laptop razer",
+        "microsoft","laptop hãng microsoft","laptop microsoft",
+        "thinkpad","laptop hãng thinkpad","laptop thinkpad",
+        "hp","laptop hãng hp","laptop hp"
+      ],
+      "responses": [
+        "Rất tiếc. Chúng tôi không có những hãng laptop này. Bạn có muốn tìm kiếm laptop Asus, Acer, Msi, Dell hay Macbook không"
+      ]
+    },
+    {
+      "tag": "calculator",
+      "patterns": [
+        "Máy tính cầm tay"
+      ],
+      "responses": [
+        "Chúng tôi gửi bạn một vài mẫu máy tính cầm tay có trong trang web"
+      ]
+    },
+
+    {
+      "tag": "genuine-computer",
+      "patterns": [
+        "Máy tính có chính hãng không",
+        "Máy tính có phải đồ cũ không",
+        "laptop có chính hãng không",
+        "laptop có phải đồ cũ không",
+        "máy tính có mới không",
+        "laptop có mới không",
+        "máy tính đã qua sử dụng chưa",
+        "laptop đã qua sử dụng chưa"
+      ],
+      "responses": [
+        "Laptop và máy tính của chúng tôi đều là hàng đã qua kiểm định. Chắc chắn là hàng chính hãng và mới 100%. Nếu phát hiện không phải, bạn hãy báo cáo và chúng tôi sẽ đền bù cho bạn"
+      ]
+    },
+    {
+      "tag": "insurance",
+      "patterns": [
+        "bảo hành ","chính sách bảo hành",
+        "gói bảo hành"
+      ],
+      "responses": [
+        "Các sản phầm như laptop, computer hay đồ công nghệ được bảo hành 1 năm"
+      ]
+    },
+    {
+      "tag": "insurance-where",
+      "patterns": [
+        "bảo hành ở đâu","bảo hành như thế nào",
+        "làm sao để bảo hành","bảo hành có mất tiền không"
+      ],
+      "responses": [
+        "Bạn đem đến các trung tâm bảo hành của hãng sản phầm gần nhất để bảo hành miễn phí trong 1 năm nha"
+      ]
+    },
+    {
+      "tag": "compensation",
+      "patterns": [
+        "đền bù","đền bù như thế nào",
+        "đền bù bao nhiêu"
+      ],
+      "responses": [
+        "Chúng tôi sẽ hoàn trả lại số tiền của sản phẩm và tặng bạn 1 voucher giảm 20% vào lần mua tiếp theo"
       ]
     },
     {
       "tag": "Book",
       "patterns": [
-        "Books","Textbook","Novel" , "Picture book", "Reference book", "Comic", "Poem", "Hardcover", "Paperback",
-        "Exercise book", "Magazine", "Autobiography", "Encyclopedia", "Thriller book", "Dictionary", "Short story",
-        "Cookery book", "Nonfiction", "Science fiction book"
+        "sách","truyện","truyện","tiểu thuyết","sách trẻ em","sách khoa học","sách văn hóa","sách xã hội","sách lịch sử",
+        "sách giáo khoa","sách tâm lý","sách tâm linh","sách chính trị","sách pháp luật","sách thiếu nhi","sách bài tập",
+        "sách ôn thi","sách giáo trình"
       ],
       "responses": [
-        "We have all books. You can find it in the search box"
+        "Chúng tôi có rất nhiều loại sách. Bạn có thể tham khảo một vài quyền sách của chúng tôi"
+      ]
+    },
+    {
+      "tag": "Book-New",
+      "patterns": [
+        "sách đã qua sử dụng chưa",
+        "sách có mới không",
+        "sách có cũ không",
+        "sách mới hay cũ"
+      ],
+      "responses": [
+        "Sách ở đây 100% là sách mới. Nếu bạn phát hiện không phải hãy báo cáo và chúng tôi sẽ đền bù cho bạn"
+      ]
+    },
+    {
+      "tag": "clothes",
+      "patterns": [
+        "đồ","bộ đồ","đồ mặc"
+      ],
+      "responses": [
+        "Bạn muốn mua áo, quần, váy hay mũ"
+      ]
+    },
+    {
+      "tag": "clothes-new",
+      "patterns": [
+        "đồ đã qua sử dụng chưa","đồ có mới không", "đồ có cũ không", "đồ mới hay cũ",
+        "áo đã qua sử dụng chưa","áo có mới không", "áo có cũ không", "áo mới hay cũ",
+        "quần đã qua sử dụng chưa","quần có mới không", "quần có cũ không", "quần mới hay cũ",
+        "mũ đã qua sử dụng chưa","mũ có mới không", "mũ có cũ không", "mũ mới hay cũ"
+      ],
+      "responses": [
+        "Quần áo ở đây đều là hàng mới, xuất xử rõ ràng và đều còn nguyên tem. Nếu phát hiện không phải thì hãy báo cáo và chúng tôi sẽ đền bù cho bạn"
+      ]
+    },
+    {
+      "tag": "T-shirt",
+      "patterns": [
+        "áo", "áo khoác","áo sơ mi","áo thun","áo len","áo choàng","áo phao"
+      ],
+      "responses": [
+        "Bạn hãy xem một vài mẫu áo ở trang web của chúng tôi nhé. Nếu bạn muốn mua thì hãy thêm vào giỏ hàng của bạn"
+      ]
+    },
+    {
+      "tag": "pants",
+      "patterns": [
+        "quần","quần dài","quần jean","quần tây","quần âu","quần sooc","quần kaki","quần lửng","quần đùi"
+      ],
+      "responses": [
+        "Bạn hãy xem một vài mẫu quần ở trang web của chúng tôi nhé. Nếu bạn muốn mua thì hãy thêm vào giỏ hàng của bạn"
+      ]
+    },
+    {
+      "tag": "Hat",
+      "patterns": [
+        "mũ","mũ lưỡi trai","mũ tai bèo","mũ che nắng","mũ cối","mũ bảo hiểm","mũ len"
+      ],
+      "responses": [
+        "Bạn hãy xem một vài mẫu mũ ở trang web của chúng tôi nhé. Nếu bạn muốn mua thì hãy thêm vào giỏ hàng của bạn"
       ]
     },
     {
       "tag": "size",
       "patterns": [
-        "What size should I wear"
+        "hỗ trợ tôi chọn size với",
+        "tôi nên chọn size nào",
+        "tôi không biết chọn size",
+        "size",
+        "tôi không biết kích cỡ nào vừa với tôi",
+        "tôi không biết chọn cỡ quần áo",
+        "kích cỡ"
       ],
       "responses": [
-        "size S : 1m40-1m55 and 40kg-49kg. size M : 1m56-1m69 and 50kg-59kg.size L : 1m70-1m80 and 60kg-69kg.size XL : 1m81-1m90 and 70kg-85kg"
-      ]
-    },
-     {
-      "tag": "no have size",
-      "patterns": [
-        "No size fit me"
-      ],
-      "responses": [
-        "Sorry. We don't have any other size"
+        "Bạn gửi cho tôi chiều cao cân nặng để tôi chọn size giúp bạn nha"
       ]
     },
     {
@@ -207,7 +783,7 @@
         "40kg","41kg","42kg","43kg","44kg","45kg","46kg","47kg","48kg","49kg"
       ],
       "responses": [
-        "you should wear size S"
+        "Bạn nên mặc size S"
       ]
     },
     {
@@ -217,7 +793,7 @@
         "50kg","51kg","52kg","53kg","54kg","55kg","56kg","57kg","58kg","59kg"
       ],
       "responses": [
-        "you should wear size M"
+        "Bạn nên mặc size M"
       ]
     },
     {
@@ -227,7 +803,7 @@
         "60kg","61kg","62kg","63kg","64kg","65kg","66kg","67kg","68kg","69kg"
       ],
       "responses": [
-        "you should wear size L"
+        "Bạn nên mặc size L"
       ]
     },
     {
@@ -237,38 +813,269 @@
         "70kg","71kg","72kg","73kg","74kg","75kg","76kg","77kg","78kg","79kg","80kg","81kg","82kg","83kg","84kg","85kg"
       ],
       "responses": [
-        "you should wear size XL"
+        "Bạn nên mặc size XL"
+      ]
+    },
+    {
+      "tag": "phone",
+      "patterns": [
+        "điện thoại","tôi muốn mua điện thoại","tôi đang tìm điện thoại","có điện thoại không"
+      ],
+      "responses": [
+        "Chúng tôi bán điện thoại của Samsung, Apple, Oppo, Vivo, Xiaomi. Bạn muốn mua loại nào?. Có 3 mức giá cho bạn chọn là 1-5 triệu, 5-10 triệu và trên 10 triệu. Bạn muốn mua mức giá nào?"
+      ]
+    },
+    {
+      "tag": "no-phone",
+      "patterns": [
+        "sony","vertu","realme","nokia","huawei"
+      ],
+      "responses": [
+        "Xin lỗi. Chúng tôi không có điện thoại của Sony, Vertu, Realme, Nokia, Huawei"
+      ]
+    },
+    {
+      "tag": "have-phone",
+      "patterns": [
+        "iphone","samsung","oppo","vivo","xiaomi"
+      ],
+      "responses": [
+        "Đây là những điện thoại hiện đang có ở chúng tôi"
+      ]
+    },
+    {
+      "tag": "price1-phone",
+      "patterns": [
+        "tôi muốn mua điện thoại trong tầm giá từ 1-5 triệu",
+        "điện thoại giá 1-5 triệu"
+      ],
+      "responses": [
+        "Đây là những điện thoại trong tầm giá bạn cần"
+      ]
+    },
+    {
+      "tag": "price2-phone",
+      "patterns": [
+        "tôi muốn mua điện thoại trong tầm giá từ 5-10 triệu",
+        "điện thoại giá 5-10 triệu"
+      ],
+      "responses": [
+        "Đây là những điện thoại trong tầm giá bạn cần"
+      ]
+    },
+    {
+      "tag": "price3-phone",
+      "patterns": [
+        "tôi muốn mua điện thoại trong tầm giá trên 10 triệu",
+        "điện thoại giá trên 10 triệu"
+      ],
+      "responses": [
+        "Đây là những điện thoại trong tầm giá bạn cần"
+      ]
+    },
+    {
+      "tag": "price4-phone",
+      "patterns": [
+        "tôi muốn mua điện thoại trong tầm giá dưới 1 triệu",
+        "dưới 1 triệu"
+      ],
+      "responses": [
+        "Chúng tôi không có điện thoại trong mức giá này"
       ]
     },
     {
       "tag": "eat",
       "patterns": [
-        "did you eat breakfast",
-        "did you eat lunch",
-        "did you eat dinner"
+        "Bạn đã ăn chưa",
+        "Bạn ăn cơm chưa",
+        "Bạn có ăn cơm không"
       ],
       "responses": [
-        "I eat every time",
-        "I'm hungry. give me something to eat",
-        "I'm AI. I do not eat"
+        "Tôi không ăn cơm. Tôi là Bot mà"
       ]
     },
     {
-      "tag": "a",
+      "tag": "spring",
       "patterns": [
-        "a"
+        "mùa xuân","trời mát"
+      ],
+      "responses": [
+        "Thời tiết không quá nóng, cũng không quá lạnh. Bạn có thể mua một vài cái áo dài tay, áo sơ mi."
+      ]
+    },
+    {
+      "tag": "summer",
+      "patterns": [
+        "mùa hè","mùa hạ","trời nóng"
+      ],
+      "responses": [
+        "Thời tiết nắng nóng. Bạn có thể mua áo thun, quần đùi hay một vài bộ đồ đi biển trong thời tiết như thế này."
+      ]
+    },
+    {
+      "tag": "autumn",
+      "patterns": [
+        "mùa thu","trời gió"
+      ],
+      "responses": [
+        "Trời nhiều gió nhưng không quá lạnh. Bạn có thể mua một vài cái áo khoác gió."
+      ]
+    },
+    {
+      "tag": "winter",
+      "patterns": [
+        "mùa đông","trời lạnh","lạnh"
+      ],
+      "responses": [
+        "Thời tiết rất lạnh. Bạn hãy mua áo khoác đủ ấm, áo phao, áo len, mũ len, quần dài hoặc là giày để giữ ấm cho cơ thể nhé."
+      ]
+    },
+    {
+      "tag": "party",
+      "patterns": [
+        "đám cưới","tiệc","sinh nhật"
+      ],
+      "responses": [
+        "Bạn hãy mua một bộ đồ mới trong bữa tiệc. Một bộ đồ theo phong cách của bạn. Hãy chọn một vài món đồ và thêm vào giỏ hàng của bạn đi"
+      ]
+    },
+
+    {
+      "tag": "Register-an-account",
+      "patterns": [
+        "làm sao để đăng kí tài khoản",
+        "tôi muốn đăng kí tài khoản",
+        "tôi muốn có một tài khoản của trang web",
+        "giúp tôi đăng kí tài khoản",
+        "hướng dẫn tôi đăng kí tài khoản"
       ],
       "responses": [
        "một hai ba bốn năm sáu"
       ]
     },
     {
-      "tag": "b",
+      "tag": "seller-channel",
       "patterns": [
-        "b"
+        "Làm thế nào để trở thành người bán ở trang web này",
+        "tôi có thể đăng kí trở thành người bán được không",
+        "tôi muốn đăng kí kênh người bán",
+        "tôi chưa đăng kí kênh người bán",
+        "tôi muốn kinh doanh ở trang web này",
+        "tôi chưa có tài khoản kênh người bán",
+        "giúp tôi đăng kí kênh người bán",
+        "hướng dẫn tôi đăng kí kênh người bán"
       ],
       "responses": [
-        "bạn đã ăn cơm chưa"
+        "Đầu tiên. Bạn phải xác thực tài khoản của bạn trước"
+      ]
+    },
+    {
+      "tag": "account-verification",
+      "patterns": [
+        "xác thực tài khoản như thế nào",
+        "làm sao để xác thực tài khoản",
+        "giúp tôi xác thực tài khoản",
+        "hướng dẫn tôi xác thực tài khoản"
+      ],
+      "responses": [
+        "Bạn vào phần tài khoản của tôi sau đó nhập gmail và số điện thoại vào để xác thực. sẽ có 1 mã gửi về gmail và số điện thoại của bạn để bạn xác thực tài khoản"
+      ]
+    },
+    {
+      "tag": "account-verification-successful",
+      "patterns": [
+        "tôi đã xác thực tài khoản",
+        "xác thực tài khoản thành công",
+        "xác thực tài khoản rồi",
+        "rồi"
+      ],
+      "responses": [
+        "Bây giờ bạn vào phần Kênh người bán để đăng kí bán hàng trên trang web nhé"
+      ]
+    },
+    {
+      "tag": "seller",
+      "patterns": [
+        "giúp tôi đăng bán sản phẩm",
+        "tôi muốn đăng bán sản phẩm",
+        "làm thế nào để đăng 1 sản phẩm lên bán trên trang web"
+      ],
+      "responses": [
+        "Nếu bạn đã đăng kí kênh người bán. Bạn vào phần Kênh người bán. Sau đó chọn đăng sản phẩm rồi nhập thông tin sản phẩm bạn muốn bán rồi đăng lên. Mọi người sẽ thấy sản phẩm mà bạn đăng lên"
+      ]
+    },
+    {
+      "tag": "forgot-pass",
+      "patterns": [
+        "quên mật khẩu",
+        "lấy lại mật khẩu",
+        "không nhớ mật khẩu"
+      ],
+      "responses": [
+        "Ở trang đăng nhập. Bạn hãy ấn quên mật khẩu và làm theo hướng dẫn"
+      ]
+    },
+    {
+      "tag": "change-pass",
+      "patterns": [
+        "thay đổi mật khẩu",
+        "đổi mật khẩu mới"
+      ],
+      "responses": [
+        "Bạn vào cài đặt. Sau đó vào phần tài khoản của tôi. Chọn thay đổi mật khẩu và làm theo hướng dẫn"
+      ]
+    },
+    {
+      "tag":"cart",
+      "patterns": [
+        "giỏ hàng",
+        "xem những thứ đã thêm vào giỏ hàng",
+        "những đồ đã thêm vào giỏ hàng",
+        "sản phẩm đã thêm vào giỏ hàng"
+      ],
+      "responses": [
+        "Bạn vào mục giỏ hàng sẽ thấy những đồ mà bạn đã thêm vào giỏ hàng"
+      ]
+    },
+    {
+      "tag":"order-completion",
+      "patterns": [
+        "tôi muốn hoàn thành đơn mua",
+        "tôi muốn xác nhận những đơn ở giỏ hàng"
+      ],
+      "responses": [
+        "Bạn vào mục giỏ hàng sau đó chọn vào ô thanh toán để mua hàng"
+      ]
+    },
+    {
+      "tag":"bought",
+      "patterns": [
+        "xem những đồ đã mua",
+        "những sản phẩm đã mua",
+        "những thứ đã mua"
+      ],
+      "responses": [
+        "Bạn vào đơn mua. Sau đó vào lịch sử đơn hàng"
+      ]
+    },
+     {
+      "tag":"order-refund",
+      "patterns": [
+        "hoàn hàng",
+        "hoàn trả đơn hàng",
+        "trả sản phẩm"
+      ],
+      "responses": [
+        "Bạn vào đơn mua. Sau đó vào lịch sử đơn hàng. Chọn đơn hàng bạn muốn hoàn trả. Rồi chọn vào mục hoàn trả đơn hàng và làm theo hướng dẫn"
+      ]
+    },
+    {
+      "tag":"order-refund1",
+      "patterns": [
+        "đồ lỗi", "sản phẩm lỗi","đồ hư","sản phẩm hư","hàng lỗi","hàng hư"
+      ],
+      "responses": [
+        "Bạn liên hệ với shop để được gửi sản phẩm khác hoặc hoàn tiền cho bạn"
       ]
     }
   ]
