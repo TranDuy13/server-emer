@@ -1,11 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const Controller = require("../Controller/ai.controller");
-const { spawn } = require("child_process");
+const { spawn, exec } = require("child_process");
 router.post("/question", (req, res) => {
   try {
     
-    const AI = spawn("python3", ["./chat.py", req.body.text]);
+    const AI = spawn("python", ["chat.py", req.body.text]);
+    exec(`python chat.py ${req.body.text}`, (error, stdout, stderr) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+      console.log(`stderr: ${stderr}`);
+    });
     AI.stdout.on("data", function (data) {
       res
         .json([

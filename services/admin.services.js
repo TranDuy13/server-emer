@@ -179,7 +179,6 @@ const updateProfile = async (id, body) => {
       url: myCloud.secure_url,
       public_id: myCloud.public_id,
     };
-    console.log(body, "body");
     const existUser = await ADMIN.findById({ _id: id });
     if (!existUser)
       return {
@@ -188,12 +187,13 @@ const updateProfile = async (id, body) => {
       };
 
     const update = await ADMIN.findByIdAndUpdate({ _id: id }, body);
-    if (update)
+    if (update){
+      const user = await ADMIN.findById({_id:id})
     return {
-      data: { admin: update },
+      data: { admin: user },
       message: "Cập nhật thông tin thành công",
       success: true,
-    };
+    };}
   } catch (error) {
     return {
       message: "Có lỗi xảy ra",

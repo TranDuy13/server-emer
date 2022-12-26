@@ -67,3 +67,11 @@ Content-Type: application/json
 {
    "text":"Hi"
 }
+### 
+GET   http://localhost:4000/product/get/type/
+Content-Type: application/json 
+
+{
+    "category": "Thời Trang Nam"
+}
+

@@ -18,8 +18,7 @@ const createProduct = async (req, res) => {
 };
 const getProduct = async (req, res) => {
   try {
-    const { id } = req.params;
-    const proService = await productService.getProduct(id);
+    const proService = await productService.getProduct(req.params);
     if (!proService.success)
       return controller.sendError(res, proService.message, 300);
     return controller.sendSuccess(
@@ -33,6 +32,22 @@ const getProduct = async (req, res) => {
   }
 };
 
+const getTypeProduct = async(req,res)=>{
+  try {
+    console.log(req.body);
+    const proService = await productService.getTypeProduct(req.body);
+    if (!proService.success)
+      return controller.sendError(res, proService.message, 300);
+    return controller.sendSuccess(
+      res,
+      proService.data,
+      200,
+      proService.message
+    );
+  } catch (error) {
+    return controller.sendError(res);
+  }
+}
 
 const getAllProduct = async (req, res) => {
   try {
@@ -74,7 +89,8 @@ const deleteProduct = async (req, res) => {
 };
 const getProductBySeller = async (req, res) => {
   try {
-    const productSer = await productService.getProductBySeller(req.params.id);
+    console.log(req.body);
+    const productSer = await productService.getProductBySeller(req.body);
     if (!productSer.success)
       return controller.sendError(res, productSer.message, 300);
     return controller.sendSuccess(
@@ -94,4 +110,5 @@ module.exports = Controller = {
   updateProduct,
   deleteProduct,
   getProductBySeller,
+  getTypeProduct
 };

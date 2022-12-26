@@ -28,7 +28,8 @@ cloudinary.config({
   api_key: "633463535256664",
   api_secret: "EyWtZfg-x67rjQx438ImVwc82PY",
 });
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true },{limit: '50mb'}));
+
 app.use(fileUpload());
 app.use(express.json());
 app.use(route);

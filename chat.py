@@ -7,7 +7,7 @@ from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
+sys.stdout.buffer.write(data.encode('utf8'))
 with open('intents.json', 'r',encoding="UTF-8") as json_data:
     intents = json.load(json_data)
 
@@ -43,6 +43,7 @@ prob = probs[0][predicted.item()]
 if prob.item() > 0.75:
     for intent in intents['intents']:
         if tag == intent["tag"]:
+            sys.stdout.buffer.write(data.encode('utf8'))
             print(f" {random.choice(intent['responses'])}")
 else:
     print(" Tôi không hiểu")

@@ -17,15 +17,34 @@ const getAllProduct = async () => {
   }
 };
 
-const getProduct = async (id) => {
+const getTypeProduct = async(body)=>{
   try {
-    console.log(id);
-    const product = await Product.findOne({ _id: id });
+    console.log(body);
+    const typeProduct = await Product.find(body)
+    if (typeProduct) {
+      return {
+        data: typeProduct,
+        success: true,
+        message:''
+      }
+    }
+  } catch (error) {
+    return { 
+      success: false,
+      message:'Lỗi'
+    }
+  }
+}
+const getProduct = async (body) => {
+  try {
+    console.log(body);
+    const product = await Product.findById({_id:body.id});
     if (!product)
       return {
         message: "Product no found!",
         success: false,
       };
+      console.log(product);
     return {
       message: "Successfully get product",
       success: true,
@@ -39,16 +58,16 @@ const getProduct = async (id) => {
   }
 };
 
-const getProductBySeller = async (id) => {
+const getProductBySeller = async (body) => {
   try {
-    const product = await Product.find({ seller: id });
+    const product = await Product.find(body);
     if (!product)
       return {
         message: "Can't get product of seller!",
         success: false,
       };
     return {
-      message: "Successfully get product",
+      message: "Successfully get products",
       success: true,
       data: product,
     };
@@ -62,9 +81,10 @@ const getProductBySeller = async (id) => {
 
 const createProduct = async (body) => {
   try {
+    console.log(body);
     const existUser = await ADMIN.findById({ _id: body.seller });
     const myCloud = await cloudinary.v2.uploader.upload(body.image, {
-      folder: "avatars",
+      folder: "products",
       width: 320,
       height: 320,
       crop: "scale",
@@ -96,20 +116,34 @@ const createProduct = async (body) => {
 
 const updateProduct = async (id, body) => {
   try {
-    //const newProduct = new Product(body)
-    const existProduct = await Product.findOne({ _id: id });
+    const existProduct = await Product.findById({ _id: id });
+    const myCloud = await cloudinary.v2.uploader.upload(body.image, {
+      folder: "products",
+      width: 320,
+      height: 320,
+      crop: "scale",
+    });
+    body.img = {
+      url: myCloud.secure_url,
+      public_id: myCloud.public_id,
+    };
     if (!existProduct) {
       return {
         message: "Product not exist",
         success: false,
       };
     }
-    await existProduct.updateOne({ _id: id }, body);
-    return {
-      message: "Successfully update product",
-      success: true,
-      data: body,
-    };
+
+    const update= await Product.findByIdAndUpdate({ _id: id }, body);
+    if(update){
+      const product = await Product.findById({_id:id})
+      return {
+        message: "Successfully update product",
+        success: true,
+        data: product,
+      };
+    }
+
   } catch (error) {
     return {
       message: "An error occurred",
@@ -149,4 +183,5 @@ module.exports = {
   updateProduct,
   deleteProduct,
   getProductBySeller,
+  getTypeProduct
 };
