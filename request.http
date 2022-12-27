@@ -68,10 +68,8 @@ Content-Type: application/json
    "text":"Hi"
 }
 ### 
-GET   http://localhost:4000/product/get/type/
-Content-Type: application/json 
+GET http://provinces.open-api.vn/api/?depth=2 
 
-{
-    "category": "Thời Trang Nam"
-}
+
+
 
