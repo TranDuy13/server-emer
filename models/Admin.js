@@ -12,7 +12,7 @@ const Admin = new Schema(
       type: String,
       required: true,
     },
-    name: {
+    fullname: {
       type: String,
       default: ' ',
     },
