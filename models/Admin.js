@@ -43,8 +43,6 @@ const Admin = new Schema(
     },
     identity_card:{
       type: Number,
-      default: ' ',
-      unique: true
     },
     isActive: {
       type: Boolean,

@@ -4,6 +4,7 @@ const Validator = require("../authenticator/index");
 const Controller = require("../Controller/status.controller");
 
 
-router.post("/status/:id/haha/:body",Controller.buyProduct)
-
+router.post("/purchase/buy",Controller.buyProduct)
+router.post("/purchase/get",Controller.getStatusByUser)
+router.post("/purchase/seller",Controller.getStatusBySeller)
 module.exports=router;

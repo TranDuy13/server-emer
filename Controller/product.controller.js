@@ -103,6 +103,21 @@ const getProductBySeller = async (req, res) => {
     return controller.sendError(res);
   }
 };
+const searchProduct = async (req, res) => {
+  try {
+    const productSer = await productService.searchProduct(req.body);
+    if (!productSer.success)
+      return controller.sendError(res, productSer.message, 300);
+    return controller.sendSuccess(
+      res,
+      productSer.data,
+      200,
+      productSer.message
+    );
+  } catch (error) {
+    return controller.sendError(res);
+  }
+};
 module.exports = Controller = {
   createProduct,
   getProduct,
@@ -110,5 +125,6 @@ module.exports = Controller = {
   updateProduct,
   deleteProduct,
   getProductBySeller,
-  getTypeProduct
+  getTypeProduct,
+  searchProduct
 };

@@ -7,7 +7,7 @@ const register = async (req, res) => {
     const resAuth = await adminService.register(req.body);
     if (!resAuth.success)
       return controller.sendError(res, resAuth.message, 300);
-    return controller.sendSuccess(res, resAuth.data, 200, resAuth.message);
+    return controller.sendSuccess(res,[ ], 200, resAuth.message);
   } catch (error) {
     return controller.sendError(res);
   }

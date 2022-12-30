@@ -13,6 +13,7 @@ router.get("/item/:id", Controller.getProduct)
 router.delete('/delete/:id', Controller.deleteProduct)
 router.get("/get/allProduct", Controller.getAllProduct)
 router.post("/get/type",Controller.getTypeProduct)
+router.get("/search/item",Controller.searchProduct)
 
 
 module.exports= router

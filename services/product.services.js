@@ -3,7 +3,7 @@ const ADMIN = require("../models/Admin");
 const cloudinary = require("cloudinary");
 const getAllProduct = async () => {
   try {
-    const product = await Product.find({});
+    const product = await Product.find({ quantity: { $gt: 0 } });
     return {
       message: "Successfully get Product",
       success: true,
@@ -175,7 +175,26 @@ const deleteProduct = async (id) => {
     };
   }
 };
+const searchProduct =async(body)=>{
+  try {
+  
 
+    const dataSearch = await Product.find( { $text: { $search: "ịphone" } } ).explain().queryPlanner.winningPlan.parsedTextQuery
+    console.log(dataSearch);
+
+    return{
+
+      success:true,
+      message:"Tìm kiếm thành công",
+    }
+  } catch (error) {
+    return{
+      
+      success:false,
+      message:"Lỗi",
+    }
+  }
+}
 module.exports = {
   createProduct,
   getProduct,
@@ -183,5 +202,6 @@ module.exports = {
   updateProduct,
   deleteProduct,
   getProductBySeller,
+  searchProduct,
   getTypeProduct
 };

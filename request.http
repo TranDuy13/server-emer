@@ -61,11 +61,11 @@ Content-Type: application/json
     "password": "1234567"
 }
 ### 
-POST  http://localhost:4000/ai/question
+POST      http://localhost:4000/purchase/get
 Content-Type: application/json 
 
 {
-   "text":"Hi"
+    
 }
 ### 
 GET http://provinces.open-api.vn/api/?depth=2 

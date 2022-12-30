@@ -18,10 +18,10 @@ const register = async (body) => {
       };
     }
     const hashedPassword = await argon2.hash(body.password);
-    const { username, password } = body;
     const newUser = new ADMIN({
-      username,
+      username: body.username,
       password: hashedPassword,
+      identity_card:Math.floor(Math.random() * 9999999) + 1000000
     });
     await newUser.save();
     return {
@@ -152,7 +152,7 @@ const verifyUser = async (id, token, _id) => {
     );
 
     if (updateUser) {
-      const data = await ADMIN.findById({_id:_id})
+      const data = await ADMIN.findById({ _id: _id });
       return {
         message: "Verify user successfullyy",
         success: true,
@@ -187,13 +187,14 @@ const updateProfile = async (id, body) => {
       };
 
     const update = await ADMIN.findByIdAndUpdate({ _id: id }, body);
-    if (update){
-      const user = await ADMIN.findById({_id:id})
-    return {
-      data: { admin: user },
-      message: "Cập nhật thông tin thành công",
-      success: true,
-    };}
+    if (update) {
+      const user = await ADMIN.findById({ _id: id });
+      return {
+        data: { admin: user },
+        message: "Cập nhật thông tin thành công",
+        success: true,
+      };
+    }
   } catch (error) {
     return {
       message: "Có lỗi xảy ra",

@@ -28,6 +28,7 @@ Cart.pre(/^find/, function (next) {
 Cart.pre(/^find/, function (next) {
   this.populate({
     path: "customer",
+    select: "-password",
   });
   next();
 })
