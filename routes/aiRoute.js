@@ -5,8 +5,8 @@ const { spawn, exec } = require("child_process");
 router.post("/question", (req, res) => {
   try {
     
-    const AI = spawn("python", ["chat.py", req.body.text]);
-    exec(`python chat.py ${req.body.text}`, (error, stdout, stderr) => {
+    const AI = spawn("python3", ["chat.py", req.body.text]);
+    exec(`python3 chat.py ${req.body.text}`, (error, stdout, stderr) => {
       if (error) {
         console.log(error);
         return;

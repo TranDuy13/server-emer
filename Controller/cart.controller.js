@@ -12,7 +12,7 @@ const addtoCart = async (req, res) => {
 };
 const deleteCart = async (req, res) => {
   try {
-    const cartS = await cartService.deleteCart(req.params);
+    const cartS = await cartService.deleteCart(req.params.id);
     if (!cartS.success) return controller.sendError(res, cartS.message, 300);
     return controller.sendSuccess(res, cartS.data, 200, cartS.message);
   } catch (error) {
@@ -21,7 +21,6 @@ const deleteCart = async (req, res) => {
 };
 const getCartbyUser = async (req, res) => {
   try {
-    console.log(req.params.id);
     const cartS = await cartService.getCartbyUser(req.params.id);
     if (!cartS.success) return controller.sendError(res, cartS.message, 300);
     return controller.sendSuccess(res, cartS.data, 200, cartS.message);

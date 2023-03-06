@@ -25,11 +25,4 @@ Cart.pre(/^find/, function (next) {
   });
   next();
 })
-Cart.pre(/^find/, function (next) {
-  this.populate({
-    path: "customer",
-    select: "-password",
-  });
-  next();
-})
 module.exports = mongoose.model('Cart', Cart);

@@ -95,6 +95,7 @@ const deleteCart = async (id) => {
 };
 const getCartbyUser = async (id) => {
   try {
+    console.log(id);
     const existCart = await CART.find({ customer: id });
         
     if (!existCart) {

@@ -3,6 +3,7 @@ const controller = require("./controller");
 
 const createProduct = async (req, res) => {
   try {
+    
     const proService = await productService.createProduct(req.body);
     if (!proService.success)
       return controller.sendError(res, proService.message, 300);
@@ -34,7 +35,6 @@ const getProduct = async (req, res) => {
 
 const getTypeProduct = async(req,res)=>{
   try {
-    console.log(req.body);
     const proService = await productService.getTypeProduct(req.body);
     if (!proService.success)
       return controller.sendError(res, proService.message, 300);

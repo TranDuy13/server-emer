@@ -1,6 +1,7 @@
 const route = require("./routes/index");
 const { MONGO_URL } = require("./models/index");
 const express = require("express");
+var cors = require('cors')
 const mongoose = require("mongoose");
 const { PORT } = require("./models/index");
 const app = express();
@@ -32,7 +33,9 @@ app.use(bodyParser.urlencoded({ extended: true },{limit: '50mb'}));
 
 app.use(fileUpload());
 app.use(express.json());
+app.use(cors())
 app.use(route);
 connectDB();
+
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

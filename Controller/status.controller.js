@@ -28,8 +28,18 @@ const getStatusByUser = async (req, res) => {
     return controller.sendError(res);
   }
 };
+const getStatusId = async (req, res) => {
+  try {
+    const statusSer = await statusService.getStatusId(req.params.id);
+    if (!statusSer) return controller.sendError(res, statusSer.message, 300);
+    return controller.sendSuccess(res, statusSer.data, 200, statusSer.message);
+  } catch (error) {
+    return controller.sendError(res);
+  }
+};
 module.exports = Controller = {
   buyProduct,
   getStatusBySeller,
-  getStatusByUser
+  getStatusByUser,
+  getStatusId
 };

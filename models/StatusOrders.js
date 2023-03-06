@@ -44,9 +44,9 @@ const Status_Orders = new Schema({
 { timestamps: true },);
 Status_Orders.pre(/^find/, function (next) {
   this.populate({
-    path: "customer",
-    select: "-password",
+    path: "products",
+    populate:{path:"product"}
   });
   next();
-})
+})  
 module.exports = mongoose.model('Status_Orders', Status_Orders);

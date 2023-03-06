@@ -6,6 +6,7 @@ const productRoute = require('./productRoute')
 const aiRoute =require('./aiRoute')
 
 const cartRoute =require('./cartRoute')
+const paymentRoute = require('./paymentRoute')
 const Route = express.Router()
 
 Route.use('/auth', adminRoute);
@@ -17,5 +18,7 @@ Route.use('/customer',statusRoute )
 Route.use('/ai',aiRoute)
 
 Route.use('/cart', cartRoute);
+Route.use('/pay', paymentRoute);
+
 
 module.exports= Route;
